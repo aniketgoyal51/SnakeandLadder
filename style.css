@@ -143,10 +143,12 @@ h1{
     }
     .ruleslist{
         font-size: 23px;
+        margin: 2% 10%;
     }
     .rulesheadtext{
         padding-top: 15px;
     }
+
 }
 
 
