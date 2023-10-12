@@ -1,0 +1,319 @@
+@import url("https://fonts.googleapis.com/css?family=Kavoon");
+body{
+    background-color: rgba(67, 125, 167, 1);
+    font-family: 'Kavoon';
+    margin: 0%;
+    padding: 0%;
+}
+h1{
+    color: white;
+    -webkit-text-stroke: 2px black ;
+}
+
+
+/* index page css */
+.indexbody{
+    display: flex;
+    flex-flow: row wrap;
+    color:white;
+    -webkit-text-stroke-color: black;
+    -webkit-text-stroke-width: 3px;
+    justify-content: center;
+    align-items: center;
+
+}
+.Name{
+    padding: 40px;
+    font-size: 50px;
+    align-items: center;
+}
+.right{
+    background-image: url("./Assets/Ladder.png");
+    background-repeat: no-repeat;
+    width: 410px;
+    height: 720px;
+    background-position-x: -150px;
+    background-size: 700px;
+    background-position-y: -30px;
+    text-align: center;
+    display: flex;
+    flex-flow: column wrap;
+    font-size: 35px;
+
+}
+.rules{
+    padding: 0px;
+    margin: 93px 0px 0px 0px;
+    cursor: pointer;
+    text-shadow: 2px 5px 10px black;
+}
+.vsplayer{
+    margin: 118px 0px 0px 0px;
+    padding: 0px;
+    cursor: pointer;
+    text-shadow: 2px 5px 10px black;
+
+}
+.vscomputer{
+    padding: 0px;
+    margin: 134px 0px 0px 0px;
+    cursor: pointer;
+    text-shadow: 2px 5px 10px black;
+
+}
+.logo{
+    height: 400px;
+}
+.left{
+    justify-content: center;
+    align-items: center;
+}
+@media (max-width: 925px){
+    .Name{
+        font-size: 35px;
+        -webkit-text-stroke-width: 1.5px;
+    }   
+    .logo{
+        height: 160px;
+        width: 160px;
+    }
+    .left{
+        display: flex;
+        flex-direction: row-reverse;
+    }
+    .right{
+        background-size:400px;
+        background-position-x: -80px;
+        width: 250px;
+        height: 380px;
+    }
+    .rules,.vsplayer,.vscomputer{
+        font-size: 25px;
+        -webkit-text-stroke-width: 1.0px;
+    }
+    .rules{
+        margin-top: 43px;
+    }
+    .vsplayer{
+        margin-top: 71px;
+    }
+    .vscomputer{
+        margin-top: 80px;
+    }
+    .indexbody{
+        flex-direction: column;
+    }
+}
+
+
+
+/*rule page css*/
+.ruleshead{
+    background-image: url("./Assets/Plank.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 500px;
+    font-size: 30px;
+}
+.rulesheadtext{
+    text-align: center;
+    padding-top: 20px;
+    color: white;
+    text-shadow: 2px 5px 10px black;
+    -webkit-text-stroke-color: black;
+    -webkit-text-stroke-width: 3px;
+
+}
+.ruleslist{
+    font-size: 28px;
+    color: white;
+    -webkit-text-stroke-width: .8px;
+    -webkit-text-stroke-color: gray;
+}
+.back{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+@media (max-width: 550px){
+    .ruleshead{
+        background-size: 320px;
+        font-size: 21px;
+    }
+    .ruleslist{
+        font-size: 23px;
+    }
+    .rulesheadtext{
+        padding-top: 15px;
+    }
+}
+
+
+
+
+
+/*board css*/
+.board{
+    display: grid;
+    grid-template-columns: repeat(10,60px);
+    grid-template-rows: repeat(10,60px);
+    border-color: transparent;
+    justify-content: center;
+    background-image: url("./Assets/Board Background.jpg");
+    background-size: 600px 600px;
+    justify-content: center;
+    align-items: center;
+
+}
+.start{
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    position: absolute;
+    left: 50px;
+    height: 600px;
+}
+.coin{
+    visibility: visible;
+}
+
+.box{
+    border: 1px ;
+
+}
+.heading{
+    margin: 0%;
+    text-align: center;
+    font-size: 50px;
+    color: white;
+    -webkit-text-stroke: 2px black ;
+}
+.body{
+    display: flex;
+    justify-content: space-evenly;
+}
+.diceturn{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+    width: 400px;
+    color:white;
+    -webkit-text-stroke-color: black;
+    -webkit-text-stroke-width: 3px;
+}
+.button{
+    font-size: 30px;
+    padding: 10px;
+    background-color: bisque;
+    color: sienna;
+    text-shadow: 5px 2px 10px;
+    border: 0px;
+    box-shadow: 6px 5px  black;
+}
+
+.button:active{
+    box-shadow: 2px 1px black;
+    transform: translateX(4px) translateY(4px);
+}
+.leader{
+    position: absolute;
+}
+.dice{
+    margin-top: 0px;
+    height: 120px;
+    margin-bottom: 20px;
+}
+.mainboard{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+}
+#red{
+    position: relative;
+    top: 10px;
+    height: 75px;
+}
+#blue{
+    height: 55px;
+}
+@media(max-width:800px){
+    .board{
+        grid-template-columns: repeat(10,30px);
+        grid-template-rows: repeat(10,30px);
+        background-size: 300px 300px;
+        height: 300px;
+        width: 300px;
+    }
+    #red{
+        height:34px;
+    }
+    #blue{
+        height: 25px;
+        position: relative;
+        top:10px;
+        right: 4px;
+    }
+    .start{
+        display: flex;
+        flex-direction: column;
+        height: 300px;
+        width: 30px;
+        position: static;
+    }
+    .button{
+        font-size: 20px;
+        padding: 4px;
+    }
+    .diceturn{
+        font-size: 20px;
+        width: 300px;
+        -webkit-text-stroke-width: 1px;
+    }
+    .body{
+        flex-flow: column wrap;
+        align-items: center;
+    }
+    .heading{
+        font-size: 30px;
+        -webkit-text-stroke-width: 1px;
+
+    }
+    .dice{
+        height:40px;
+        margin-bottom: 20px;
+    }
+
+}
+
+
+
+
+/*Score Board CSS*/
+.lastslide{
+    height: 740px;
+    width: 100%;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+}
+.button:active{
+    box-shadow: 2px 1px black;
+    transform: translateX(4px) translateY(4px);
+}
+.result{
+    font-size: 50px;
+    text-align: center;
+}
+@media (max-width: 500px){
+    .result{
+        font-size: 36px;
+    }
+}
+
+
+
+
+

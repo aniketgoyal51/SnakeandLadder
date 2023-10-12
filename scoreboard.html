@@ -1,0 +1,29 @@
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Score Board</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="lastslide">
+        <h1 class="result"><span id="whowingame">Computer/Player</span> won the game</h1>
+        <button type="button" class="button">Restart</button>
+        <h1>Made By Aniket Goyal</h1>
+    </div>
+<script>
+    const btn=document.querySelector(".button")
+    btn.onclick=()=>{
+        location.href="index.html"
+    }
+    const whowingame=document.getElementById("whowingame")
+    whowingame.innerText=localStorage.getItem("won")
+
+    const win=new Audio("./Assets/CroudCelebration.wav")
+    win.pause();
+    win.currentTime=0;
+    win.play();
+</script>    
+</body>
+</html>
