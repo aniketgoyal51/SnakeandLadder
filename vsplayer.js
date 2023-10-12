@@ -3,8 +3,8 @@ const dice=document.getElementsByClassName("dice")[0]
 const board=document.getElementsByClassName("board")[0]
 const box=document.getElementsByClassName("box")
 
-const btn=document.getElementsByClassName("button")[0]
-
+const btn=document.getElementsByClassName("buttonuse")[0]
+const btnexit=document.getElementsByClassName("exit")[0]
 const turn=document.getElementById("turn")
 const red=document.getElementById("p1")
 
@@ -19,7 +19,9 @@ const dicesound=new Audio("./Assets/dice.mp3")
 let count=0;
 let bscore=0;
 let rscore=0;
-
+btnexit.onclick=()=>{
+    location.href="index.html"
+}
 btn.onclick=()=>{
     var roll=Math.ceil(Math.random()*6)
     dice.innerHTML=`<img src="./Assets/Dot${roll}.png" height="100%">`

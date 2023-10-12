@@ -4,6 +4,7 @@ const board=document.getElementsByClassName("board")[0]
 const box=document.getElementsByClassName("box")
 
 const btn=document.getElementsByClassName("button")[0]
+const btnexit=document.getElementsByClassName("exit")[0]
 
 const turn=document.getElementById("turn")
 const red=document.getElementById("p1")
@@ -19,7 +20,9 @@ const dicesound=new Audio("./Assets/dice.mp3")
 let count=0;
 let cscore=0;
 let rscore=0;
-
+btnexit.onclick=()=>{
+    location.href="index.html"
+}
 function redirect(){
     dicesound.pause();
     dicesound.currentTime=0;
