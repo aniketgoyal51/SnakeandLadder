@@ -13,9 +13,9 @@ const redcoin=document.getElementById("red")
 const compcoin=document.getElementById("blue")
 
 const dicesound=new Audio("./Assets/dice.mp3")
-// const game=new Audio("./Assets/gameaudio.mp3")
-// game.play();
-// game.loop=true;
+const game=new Audio("./Assets/gameaudio.mp3")
+game.play();
+game.loop=true;
 
 let count=0;
 let cscore=0;
@@ -33,7 +33,6 @@ function redirect(){
         console.log(roll)     //-----------------
         turn.innerHTML="Red"
         count=count+1
-        // console.log(count)         //-----------------
         play('p1', 'cp',roll)
         compcoin.style.visibility="hidden";
         
@@ -46,10 +45,8 @@ redirect()
         btn.onclick=()=>{
         var roll=Math.ceil(Math.random()*6)
         dice.innerHTML=`<img src="./Assets/Dot${roll}.png" height="100%">`
-        console.log(roll)     //-----------------
             turn.innerHTML="Comp"
             count=count+1
-            // console.log(count)         //-----------------
             play('p1', 'rp',roll)
             redcoin.style.visibility="hidden";
             redirect()
@@ -61,7 +58,6 @@ function play(player,psum,roll){
     let sum
     if(psum==='cp'){
         cscore=cscore+roll
-        // console.log(roll)
 
         if(cscore>100){
             cscore=cscore-roll
@@ -116,7 +112,6 @@ function play(player,psum,roll){
         }
         sum=cscore
         console.log("c sum = "+ sum)
-        // console.log(yscore)
         if(count===1){
             document.getElementById(`box${cscore}`).innerHTML="";
         }else if(count>=2){
@@ -193,7 +188,6 @@ function play(player,psum,roll){
         }
         sum=rscore
         console.log("r sum = "+ sum)
-        // console.log(rscore)
         if(count===2){
             document.getElementById(`box${rscore}`).innerHTML="";
         }else if(count>=2){
@@ -205,12 +199,10 @@ function play(player,psum,roll){
         if(rscore === 100) {
             localStorage.setItem("won","Red")
             location.href="scoreboard.html"
-            // console.log(localStorage.getItem("won"))
         }
         if(cscore===100){
             localStorage.setItem("won","Comp")
             location.href="scoreboard.html"
-            // console.log(localStorage.getItem("won"))
         }
         
     }

@@ -12,9 +12,9 @@ const redcoin=document.getElementById("red")
 const bluecoin=document.getElementById("blue")
 
 const dicesound=new Audio("./Assets/dice.mp3")
-// const game=new Audio("./Assets/gameaudio.mp3")
-// game.play();
-// game.loop=true;
+const game=new Audio("./Assets/gameaudio.mp3")
+game.play();
+game.loop=true;
 
 let count=0;
 let bscore=0;
@@ -33,16 +33,13 @@ btn.onclick=()=>{
     if (count%2===1){
         turn.innerHTML="Blue"
         count=count+1
-        // console.log(count)         //-----------------
         play('p1', 'rp',roll)
         redcoin.style.visibility="hidden";
     }else if(count%2===0){
         turn.innerHTML="Red"
         count=count+1
-        // console.log(count)         //---------------------------
         play('p2', 'yp',roll)
         bluecoin.style.visibility="hidden";
-        // console.log(yscore)
     }
 }
 
@@ -52,7 +49,6 @@ function play(player,psum,roll){
     if(psum==='yp'){
         console.log(roll +"+"+ bscore)
         bscore=bscore+roll
-        // console.log(roll)
 
         if(bscore>100){
             bscore=bscore-roll
@@ -111,7 +107,6 @@ function play(player,psum,roll){
         }
         sum=bscore
         console.log("y sum = "+ sum)
-        // console.log(yscore)
         if(count===1){
             document.getElementById(`box${bscore}`).innerHTML="";
         }else if(count>=2){
@@ -192,7 +187,6 @@ function play(player,psum,roll){
         }
         sum=rscore
         console.log("r sum = "+ sum)
-        // console.log(rscore)
         if(count===2){
             document.getElementById(`box${rscore}`).innerHTML="";
         }else if(count>=2){
@@ -204,12 +198,10 @@ function play(player,psum,roll){
         if(rscore === 100) {
             localStorage.setItem("won","Red")
             location.href="scoreboard.html"
-            // console.log(localStorage.getItem("won"))
         }
         if(bscore===100){
             localStorage.setItem("won","Blue")
             location.href="scoreboard.html"
-            // console.log(localStorage.getItem("won"))
         }
         
     }
